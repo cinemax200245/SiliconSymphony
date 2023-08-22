@@ -1,4 +1,4 @@
-# WM-811K-WaferMap-A-deep-learning-apporach
+# SemiconductorSymphony.AI: Unraveling Defects in WM-811K WaferMaps using Deep Learning
 
 **Enhancing Wafer Defect Classification using Convolutional Neural Networks (CNN)**
 
