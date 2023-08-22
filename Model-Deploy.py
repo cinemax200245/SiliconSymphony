@@ -73,25 +73,28 @@ if __name__ == '__main__':
     st.subheader("Semiconductor Wafermap Failure Detection and Recognition")
 
     st.markdown(
-        """
-        <style>
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            text-align: center;
-            background: linear-gradient(to right, #0099CC, #66CCFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .subheader {
-            font-size: 24px;
-            text-align: center;
-            margin-top: -20px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
+    """
+    <style>
+    .title {
+        font-size: 42px;
+        font-weight: bold;
+        text-align: center;
+        color: #0099CC;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+    }
+    .subheader {
+        font-size: 28px;
+        text-align: center;
+        color: #555555;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        margin-top: -10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 
     st.markdown(
     "Welcome to the **WM-811K WaferMap** analysis platform. This tool employs a **Convolutional Neural Network (CNN)** to "
@@ -162,4 +165,4 @@ if __name__ == '__main__':
         unsafe_allow_html=True,
     )
     st.sidebar.write("## Project Contributors", unsafe_allow_html=True)
-    st.sidebar.write("Anish De, Sayan Dey, Kankana Basak, Bijit Sen")
+    st.sidebar.write("Anish De\nSayan Dey\nKankana Basak\nBijit Sen")
