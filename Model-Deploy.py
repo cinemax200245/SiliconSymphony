@@ -71,6 +71,27 @@ def prediction(im):
 if __name__ == '__main__':
     st.title("WM-811K WaferMap")
     st.subheader("Semiconductor Wafermap Failure Detection and Recognition")
+
+  st.markdown(
+    """
+    <style>
+    .title {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        background: linear-gradient(to right, #0099CC, #66CCFF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .subheader {
+        font-size: 24px;
+        text-align: center;
+        margin-top: -20px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
     
     st.markdown(
         "Welcome to the **WM-811K WaferMap** analysis platform. This tool employs a **CNN model** to identify and classify "
@@ -80,9 +101,12 @@ if __name__ == '__main__':
     )
 
     st.write("##")
-    
+# Create a centered container for the content
+content_container = st.container()
+
+with content_container:
     col1, col2 = st.columns([1, 5])
-    
+
     with col1:
         st.subheader("Failure Types")
         selectedType = st.selectbox("", failureTypes)
@@ -102,6 +126,8 @@ if __name__ == '__main__':
             buttons.append(st.button('Image '+str(i+5), on_click=prediction, args=(imagesDeploy[selectedType][i+5],)))
 
     st.write('##')
+    st.markdown("---")
+  --------------------------------
     st.subheader("Probability of Failure Types")
     for i in range(len(buttons)):
         if buttons[i]:
@@ -112,5 +138,21 @@ if __name__ == '__main__':
         if buttons[i]:
             st.write(st.session_state.class_pr)
 
-    st.sidebar.write("## Project Contributors")
-    st.sidebar.write("Project Done by Anish De, Sayan Dey, Kankana Basak, Bijit Sen")
+   st.sidebar.markdown(
+    """
+    <style>
+    .sidebar-header {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 15px;
+        background: linear-gradient(to right, #0099CC, #66CCFF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+st.sidebar.write("## Project Contributors", unsafe_allow_html=True)
+st.sidebar.write("Anish De, Sayan Dey, Kankana Basak, Bijit Sen")
