@@ -69,47 +69,48 @@ def prediction(im):
   st.session_state.class_pr = class_pr
 
 if __name__ == '__main__':
-  st.title("WM-811K WaferMap")
-  st.subheader("Summary")
-  st.markdown(
-    "In this page is possible to play with a **CNN model** developed to approach the task of **semiconductor wafermaps failure detection and recognition**. " +
-    "In particular, the problem consists in identify the type of defect of a specific wafermap among 9:\n" +
-    "<p style='font-style: italic;text-align:center'> Center - Donut - Edge-Loc - Edge-Ring - Loc - Near-full - Random - Scratch - none </p>" + "\n" +
-    "Selecting a type of failure will show you 10 images associated with that specific defect. Clicking the button under a certain image you can see the " +
-    "<span style='font-weight:bold'> class predicted </span> for that image by the model and the" + 
-    "<span style='font-weight:bold'> probability of belonging to each class </span> (i.e. the output of the model)."
-    ,unsafe_allow_html=True
-  )
-  st.write("##")
-  
-  
-  col1, col2 = st.columns([1,5])
-  
-  with col1:
-    st.subheader("Failure Types")
-    selectedType = st.selectbox("", failureTypes)
-    st.write("")
-  
-  col1, col2, col3, col4, col5 = st.columns(5)
-  cols = [col1, col2, col3, col4, col5]
-  
-  buttons = []
-  
-  for i in range(len(cols)):
-    with cols[i]:
-      st.image(imagesDisplay[selectedType][i])
-      buttons.append(st.button('Image '+str(i), on_click = prediction, args = (imagesDeploy[selectedType][i],)))
-      st.write('##')
-      st.image(imagesDisplay[selectedType][i+5])
-      buttons.append(st.button('Image '+str(i+5), on_click = prediction, args = (imagesDeploy[selectedType][i+5],)))
-  
-  st.write('##')
-  st.subheader("Probability to belong to a specific failure types class")
-  for i in range(len(buttons)):
-    if buttons[i]:
-      st.session_state.all_pr
+    st.title("WM-811K WaferMap")
+    st.subheader("Semiconductor Wafermap Failure Detection and Recognition")
+    
+    st.markdown(
+        "Welcome to the **WM-811K WaferMap** analysis platform. This tool employs a **CNN model** to identify and classify "
+        "defect types in semiconductor wafermaps. The model can detect 9 different failure types:\n"
+        "**Center**, **Donut**, **Edge-Loc**, **Edge-Ring**, **Loc**, **Near-full**, **Random**, **Scratch**, and **None**."
+        "Select a failure type to explore corresponding images and predictions."
+    )
 
-  st.subheader("Class predicted")
-  for i in range(len(buttons)):
-    if buttons[i]:
-      st.session_state.class_pr
+    st.write("##")
+    
+    col1, col2 = st.columns([1, 5])
+    
+    with col1:
+        st.subheader("Failure Types")
+        selectedType = st.selectbox("", failureTypes)
+        st.write("")
+
+    col1, col2, col3, col4, col5 = st.columns(5)
+    cols = [col1, col2, col3, col4, col5]
+
+    buttons = []
+
+    for i in range(len(cols)):
+        with cols[i]:
+            st.image(imagesDisplay[selectedType][i])
+            buttons.append(st.button('Image '+str(i), on_click=prediction, args=(imagesDeploy[selectedType][i],)))
+            st.write('##')
+            st.image(imagesDisplay[selectedType][i+5])
+            buttons.append(st.button('Image '+str(i+5), on_click=prediction, args=(imagesDeploy[selectedType][i+5],)))
+
+    st.write('##')
+    st.subheader("Probability of Failure Types")
+    for i in range(len(buttons)):
+        if buttons[i]:
+            st.write(st.session_state.all_pr)
+
+    st.subheader("Predicted Failure Type")
+    for i in range(len(buttons)):
+        if buttons[i]:
+            st.write(st.session_state.class_pr)
+
+    st.sidebar.write("## Project Contributors")
+    st.sidebar.write("Project Done by Anish De, Sayan Dey, Kankana Basak, Bijit Sen")
