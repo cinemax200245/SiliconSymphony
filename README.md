@@ -27,18 +27,19 @@ By sharing our journey and outcomes, we aspire to contribute to the realm of def
 Due to the **extreme imbalance of the dataset**, both among failure classes and between the non failure class (none) and the failure classes, we have focused on the **generation of synthetic data** that together with classical augmentation techniques have lead in improve model performance. In particular, the final model shows more uniform performance across classes than the initial one as well as a greater mean percentual of correct classified images.
 
 
-|           | Initial Model | Final Model | Difference in  performance |
-|-----------|:-------------:|:-----------:|:--------------------------:|
-| Center    |     88.61%    |    89.65%   |            1.04%           |
-| Donut     |     79.78%    |    86.52%   |            6.74%           |
-| Edge-Loc  |     66.46%    |    87.00%   |           20.54%           |
-| Edge-Ring |     97.93%    |    96.64%   |           -1.29%           |
-| Loc       |     66.61%    |    64.72%   |           -1.89%           |
-| Near-full |     79.17%    |    91.67%   |            12.5%           |
-| Random    |     84.78%    |    90.58%   |            5.8%            |
-| Scratch   |     29.03%    |    67.57%   |           38.54%           |
-| None      |     99.33%    |    98.8%    |            -0.5%           |
-| Mean      |     76.86%    |    85.9%    |            9.04            |
+| Failure   | Final Model Performance |
+|-----------|:-----------------------:|
+| Center    |         89.65%          |
+| Donut     |         86.52%          |
+| Edge-Loc  |         87.00%          |
+| Edge-Ring |         96.64%          |
+| Loc       |         64.72%          |
+| Near-full |         91.67%          |
+| Random    |         90.58%          |
+| Scratch   |         67.57%          |
+| None      |         98.80%          |
+---------------------------------------
+| Mean      |         85.90%          |  
 
 More details can be found in the *Presentation slides.pdf* file. 
 
