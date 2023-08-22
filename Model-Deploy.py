@@ -177,7 +177,7 @@ if __name__ == '__main__':
     }
     .contributor {
         font-size: 18px;
-        color: #333333;
+        color: #ffffed;
         margin-bottom: 10px;
         text-align: center;
     }
