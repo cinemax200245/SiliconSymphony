@@ -1,7 +1,26 @@
 # WM-811K-WaferMap-A-deep-learning-apporach
 
-Beeing able to identify specific class defects in product, such as wafermap, can help in understand what's wrong in the production chain. So that it became possible
-to take necessary actions faster and in a targeted manner. In this repo, you can find the step followed by me togheter with my colleagues **Greta Gravina** and **Niccolò Puccinelli** in order to developed a simple CNN to face the problem previously descripted. In particular, the problem consists in identify the type of defect of wafermaps among 9:
+**Enhancing Wafer Defect Classification using Convolutional Neural Networks (CNN)**
+
+In the realm of modern manufacturing, the accurate identification of specific class defects within products, such as wafermaps, holds paramount significance. The ability to swiftly discern anomalies not only aids in understanding potential production chain glitches but also empowers prompt, targeted interventions. In this repository, our collective endeavor revolves around the development of a streamlined Convolutional Neural Network (CNN) that effectively tackles the intricate challenge of wafermap defect classification.
+
+**The Problem and Objective**
+
+Our focus is centered on the critical task of identifying nine distinct defect classes in wafermaps, encompassing Center, Donut, Edge-Loc, Edge-Ring, Loc, Near-full, Random, Scratch, and none. These diverse defect types encapsulate a range of anomalies that may arise during the manufacturing process. The primary aim of our project is to create an intelligent system that can accurately assign each wafermap to its corresponding defect category.
+
+**Navigating Imbalanced Data**
+
+A significant hurdle in our endeavor is the considerable imbalance prevalent in the dataset. Imbalance emerges both among the different failure classes and between the non-failure class (none) and the failure classes. Recognizing this challenge, we undertook a strategic approach to address this imbalance.
+
+**Synthetic Data Generation and Augmentation Techniques**
+
+To counteract the imbalance and enhance the efficacy of our model, we embarked on a twofold strategy. Firstly, we leveraged the potential of synthetic data generation. This involved creating additional training samples for the underrepresented defect classes. Complementing this, we harnessed classical augmentation techniques to enrich the diversity of the training data. This two-pronged approach synergistically worked to enhance the model's ability to distinguish intricate defect patterns.
+
+**Refined Model Performance**
+
+The culmination of our efforts resulted in a refined CNN model that exhibited remarkable improvements over its earlier iterations. Notably, the final model demonstrated a more balanced performance across all defect classes, mitigating the undue influence of the dataset's imbalance. Furthermore, the model showcased an elevated mean percentage of accurately classified images, indicative of its enhanced robustness in real-world scenarios.
+
+By sharing our journey and outcomes, we aspire to contribute to the realm of defect detection within manufacturing processes. Our work underscores the significance of intelligent algorithms in expediting defect identification and, consequently, enabling swift, precise corrective measures. We invite you to explore this repository and delve into the intricacies of our approach, offering insights and inspiration for similar endeavors.
 
 <p align="center"> Center - Donut - Edge-Loc - Edge-Ring - Loc - Near-full - Random - Scratch - none </p>
 
@@ -23,4 +42,3 @@ Due to the **extreme imbalance of the dataset**, both among failure classes and 
 
 More details can be found in the *Presentation slides.pdf* file. 
 
-In addition, following this link https://marco-scatassi-wm-811k-wafermap-a-deep-lear-model-deploy-vy0bqn.streamlit.app/ it's possible to play a little with one of the tested models in order to see how it works. I hope you will enjoy it 😄.
