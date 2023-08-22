@@ -72,27 +72,27 @@ if __name__ == '__main__':
     st.title("WM-811K WaferMap")
     st.subheader("Semiconductor Wafermap Failure Detection and Recognition")
 
-  st.markdown(
-    """
-    <style>
-    .title {
-        font-size: 36px;
-        font-weight: bold;
-        text-align: center;
-        background: linear-gradient(to right, #0099CC, #66CCFF);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .subheader {
-        font-size: 24px;
-        text-align: center;
-        margin-top: -20px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-    
+    st.markdown(
+        """
+        <style>
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(to right, #0099CC, #66CCFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subheader {
+            font-size: 24px;
+            text-align: center;
+            margin-top: -20px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
     st.markdown(
         "Welcome to the **WM-811K WaferMap** analysis platform. This tool employs a **CNN model** to identify and classify "
         "defect types in semiconductor wafermaps. The model can detect 9 different failure types:\n"
@@ -101,57 +101,58 @@ if __name__ == '__main__':
     )
 
     st.write("##")
-# Create a centered container for the content
-content_container = st.container()
+    
+    # Create a centered container for the content
+    content_container = st.container()
 
-with content_container:
-    col1, col2 = st.columns([1, 5])
+    with content_container:
+        col1, col2 = st.columns([1, 5])
 
-    with col1:
-        st.subheader("Failure Types")
-        selectedType = st.selectbox("", failureTypes)
-        st.write("")
+        with col1:
+            st.subheader("Failure Types")
+            selectedType = st.selectbox("", failureTypes)
+            st.write("")
 
-    col1, col2, col3, col4, col5 = st.columns(5)
-    cols = [col1, col2, col3, col4, col5]
+        col1, col2, col3, col4, col5 = st.columns(5)
+        cols = [col1, col2, col3, col4, col5]
 
-    buttons = []
+        buttons = []
 
-    for i in range(len(cols)):
-        with cols[i]:
-            st.image(imagesDisplay[selectedType][i])
-            buttons.append(st.button('Image '+str(i), on_click=prediction, args=(imagesDeploy[selectedType][i],)))
-            st.write('##')
-            st.image(imagesDisplay[selectedType][i+5])
-            buttons.append(st.button('Image '+str(i+5), on_click=prediction, args=(imagesDeploy[selectedType][i+5],)))
+        for i in range(len(cols)):
+            with cols[i]:
+                st.image(imagesDisplay[selectedType][i])
+                buttons.append(st.button('Image '+str(i), on_click=prediction, args=(imagesDeploy[selectedType][i],)))
+                st.write('##')
+                st.image(imagesDisplay[selectedType][i+5])
+                buttons.append(st.button('Image '+str(i+5), on_click=prediction, args=(imagesDeploy[selectedType][i+5],)))
 
-    st.write('##')
-    st.markdown("---")
-    st.subheader("Probability of Failure Types")
-    for i in range(len(buttons)):
-        if buttons[i]:
-            st.write(st.session_state.all_pr)
+        st.write('##')
+        st.markdown("---")
+        st.subheader("Probability of Failure Types")
+        for i in range(len(buttons)):
+            if buttons[i]:
+                st.write(st.session_state.all_pr)
 
-    st.subheader("Predicted Failure Type")
-    for i in range(len(buttons)):
-        if buttons[i]:
-            st.write(st.session_state.class_pr)
+        st.subheader("Predicted Failure Type")
+        for i in range(len(buttons)):
+            if buttons[i]:
+                st.write(st.session_state.class_pr)
 
-   st.sidebar.markdown(
-    """
-    <style>
-    .sidebar-header {
-        font-size: 24px;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 15px;
-        background: linear-gradient(to right, #0099CC, #66CCFF);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-st.sidebar.write("## Project Contributors", unsafe_allow_html=True)
-st.sidebar.write("Anish De, Sayan Dey, Kankana Basak, Bijit Sen")
+    st.sidebar.markdown(
+        """
+        <style>
+        .sidebar-header {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #0099CC, #66CCFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    st.sidebar.write("## Project Contributors", unsafe_allow_html=True)
+    st.sidebar.write("Anish De, Sayan Dey, Kankana Basak, Bijit Sen")
