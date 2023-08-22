@@ -127,7 +127,6 @@ with content_container:
 
     st.write('##')
     st.markdown("---")
-  --------------------------------
     st.subheader("Probability of Failure Types")
     for i in range(len(buttons)):
         if buttons[i]:
