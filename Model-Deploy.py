@@ -164,5 +164,30 @@ if __name__ == '__main__':
         """,
         unsafe_allow_html=True,
     )
-    st.sidebar.write("## Project Contributors", unsafe_allow_html=True)
-    st.sidebar.write("Anish De\nSayan Dey\nKankana Basak\nBijit Sen")
+    st.sidebar.markdown(
+    """
+    <style>
+    .sidebar-header {
+        font-size: 28px;
+        font-weight: bold;
+        color: #0099CC;
+        text-align: center;
+        margin-bottom: 15px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    .contributor {
+        font-size: 18px;
+        color: #333333;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.sidebar.markdown("<p class='sidebar-header'>Project Contributors</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p class='contributor'>Anish De</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p class='contributor'>Sayan Dey</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p class='contributor'>Kankana Basak</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p class='contributor'>Bijit Sen</p>", unsafe_allow_html=True)
