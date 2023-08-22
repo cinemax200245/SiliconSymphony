@@ -1,4 +1,4 @@
-# SliconSymphony: Unraveling Defects in WM-811K WaferMaps using Deep Learning
+# SiliconSymphony: Unraveling Defects in WM-811K WaferMaps using Deep Learning
 
 **Enhancing Wafer Defect Classification using Convolutional Neural Networks (CNN)**
 
