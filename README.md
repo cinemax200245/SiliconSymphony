@@ -39,7 +39,8 @@ Due to the **extreme imbalance of the dataset**, both among failure classes and 
 | Scratch   |         67.57%          |
 | None      |         98.80%          |
 |-----------|:-----------------------:|
-| Mean      |         85.90%          |  
+| **Mean**  |       **85.90%**        |
+
 
 More details can be found in the *Presentation slides.pdf* file. 
 
