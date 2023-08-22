@@ -94,11 +94,18 @@ if __name__ == '__main__':
     )
 
     st.markdown(
-        "Welcome to the **WM-811K WaferMap** analysis platform. This tool employs a **CNN model** to identify and classify "
-        "defect types in semiconductor wafermaps. The model can detect 9 different failure types:\n"
-        "**Center**, **Donut**, **Edge-Loc**, **Edge-Ring**, **Loc**, **Near-full**, **Random**, **Scratch**, and **None**."
-        "Select a failure type to explore corresponding images and predictions."
-    )
+    "Welcome to the **WM-811K WaferMap** analysis platform. This tool employs a **Convolutional Neural Network (CNN)** to "
+    "identify and classify defect types in semiconductor wafermaps.\n"
+    "Wafermaps are essential in semiconductor manufacturing to detect flaws and imperfections in wafers. Our CNN model helps "
+    "automate the process of recognizing different types of defects.\n\n"
+    "The model is trained to detect 9 different failure types:\n"
+    "**Center**, **Donut**, **Edge-Loc**, **Edge-Ring**, **Loc**, **Near-full**, **Random**, **Scratch**, and **None**.\n\n"
+    "Each failure type corresponds to a specific pattern or anomaly that can occur on a semiconductor wafer.\n\n"
+    "By selecting a failure type, you can explore images associated with that specific defect and see how the model's predictions "
+    "align with human judgment. This interactive platform provides insights into the capabilities of the CNN model and its "
+    "ability to assist in quality control within semiconductor production lines."
+)
+
 
     st.write("##")
     
